@@ -22,12 +22,13 @@ dot_env_variables = dotenv_values()
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#qt5em^q&!(-co5_f_6$evf=pdt(=0^r%6%oh!szlso2!*1cd!'
+SECRET_KEY = dot_env_variables['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if dot_env_variables['APP_ENV'] == 'development' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = dot_env_variables['ALLOWED_HOSTS'].split(
+    ',') if 'ALLOWED_HOSTS' in dot_env_variables else ['*']
 
 
 # Application definition
