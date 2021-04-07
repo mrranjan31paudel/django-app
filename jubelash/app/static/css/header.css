@@ -1,0 +1,23 @@
+header {
+  height: 48px;
+  position: fixed;
+  top: 0;
+  z-index: 1400;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+.navbar {
+  height: 100%;
+}
+
+.navbar-brand {
+  border: 1px solid var(--bs-light);
+  border-radius: 4px;
+  background-color: #00000030
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #00000030;
+}
