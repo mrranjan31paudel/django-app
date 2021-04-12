@@ -28,18 +28,18 @@
 </head>
 
 <body>
-  <header class="px-2">
-    <nav class="navbar navbar-expand-md flex-row flex-nowrap">
-      <a class="navbar-brand text-white px-2" href="/">JUB</a>
+  <header>
+    <nav class="navbar navbar-expand-sm">
+      <a href="/" class="navbar-brand text-white px-2">JUB</a>
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item {% if page == 'home' %}active {% endif %}rounded">
-          <a href="/home/" class="nav-link text-light">
+      <ul class="navbar-nav flex-row mr-auto">
+        <li class="nav-item {% if page == 'home' %}active {% endif %}rounded mx-1">
+          <a href="/home/" class="px-2 nav-link text-light">
             Home
           </a>
         </li>
-        <li class="nav-item {% if page == 'about' %}active {% endif %}rounded">
-          <a href="/about/" class="nav-link text-light">
+        <li class="nav-item {% if page == 'about' %}active {% endif %}rounded mx-1">
+          <a href="/about/" class="px-2 nav-link text-light">
             About
           </a>
         </li>
