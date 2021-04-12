@@ -1,4 +1,9 @@
 {% extends 'index.html' %}
+{% load static %}
+
+{% block link_block %}
+<link rel="stylesheet" href="{% static 'css/icon-links.css' %}">
+{% endblock %}
 
 {% block title_block %}
 Jubelash - About
@@ -6,24 +11,53 @@ Jubelash - About
 
 {% block main_block %}
 <div class="text-center">
-  <h2>
-    About Jubelash
-    <div class="dropdown-divider"></div>
-  </h2>
-  <p>
-    This is a sample Django application.
-  </p>
-  <p>
-    Other Credits:<br />
-    <a href="https://getbootstrap.com/" class="text-decoration-none" target="_blank">
-      Bootstrap (v4.6.0) <i class="fa fa-external-link"></i>
-    </a><br />
-    <a href="https://fontawesome.com/v4.7.0/" class="text-decoration-none" target="_blank">
-      Font Awesome (v4.7.0) <i class="fa fa-external-link"></i>
-    </a>
-  </p>
-  <p class="small text-muted">
-    Further details will be updated.
-  </p>
+    <h2>
+        About Jubelash
+        <div class="dropdown-divider"></div>
+    </h2>
+
+    <div class="mb-4">
+        This is a sample Django application.
+    </div>
+
+    <div class="mb-4">
+        <h5>Contributors</h5>
+        {% for c in contributors %}
+        <div>
+            {{ c.name }}
+            {% if c.github_handle %}
+            <a href="https://github.com/{{ c.github_handle }}" class="text-decoration-none github-link" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            {% if c.fb_id %}
+            <a href="https://www.facebook.com/{{ c.fb_id }}" class="text-decoration-none fb-link" target="_blank">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+            {% if c.twitter_id %}
+            <a href="https://twitter.com/{{ c.twitter_id }}" class="text-decoration-none twitter-link" target="_blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="mb-4">
+        <h5>Other Credits:</h5>
+        <p>
+            <a href="https://getbootstrap.com/" class="text-decoration-none" target="_blank">
+                Bootstrap (v4.6.0) <i class="fa fa-external-link"></i>
+            </a><br />
+            <a href="https://fontawesome.com/v4.7.0/" class="text-decoration-none" target="_blank">
+                Font Awesome (v4.7.0) <i class="fa fa-external-link"></i>
+            </a>
+        </p>
+    </div>
+
+    <p class="small text-muted">
+        Further details will be updated.
+    </p>
 </div>
 {% endblock %}
