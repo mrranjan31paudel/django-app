@@ -18,11 +18,9 @@ from django.urls import path, re_path, include
 from django.shortcuts import redirect
 
 from app.settings import ADMIN_URL
-from app.views import *
 
 urlpatterns = [
-    path('', redirect_to_home),
     path(ADMIN_URL, admin.site.urls),
-    re_path('home/', include('home.urls')),
+    re_path('', include('home.urls')),
     path('about/', include('about.urls'))
 ]
