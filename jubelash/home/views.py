@@ -1,14 +1,13 @@
 from django.shortcuts import render
 
-from home.models import HomeModel
+from datetime import datetime
 
 # Create your views here.
 
 
 def home_dashboard(request):
-    home_model = HomeModel()
     context = {
         'page': 'home',
-        'time': home_model.get_display_time_now()
+        'time': datetime.now().strftime('%A, %B %d %Y, %I:%M:%S %p')
     }
     return render(request, 'home.html', context)

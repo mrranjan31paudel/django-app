@@ -25,8 +25,8 @@ Jubelash - About
         {% for c in contributors %}
         <div>
             {{ c.name }}
-            {% if c.github_handle %}
-            <a href="https://github.com/{{ c.github_handle }}" class="text-decoration-none github-link" target="_blank">
+            {% if c.github_id %}
+            <a href="https://github.com/{{ c.github_id }}" class="text-decoration-none github-link" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
             {% endif %}

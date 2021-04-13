@@ -1,13 +1,14 @@
 from django.shortcuts import render
 
-from about.models import AboutModel
+from about.models import Contributor
 
 # Create your views here.
 
 
 def about_page(request):
-    about_model = AboutModel()
-    contributors = about_model.get_contributers_list()
+    contributor = Contributor()
+    contributors = contributor.get_all_contributors()
+
     context = {
         'page': 'about',
         'contributors': contributors,
