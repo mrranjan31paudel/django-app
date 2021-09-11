@@ -3,3 +3,5 @@ app-env
 **/__pycache__
 
 **/.env
+
+/staticfiles
